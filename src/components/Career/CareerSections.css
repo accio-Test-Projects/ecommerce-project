@@ -1,0 +1,13 @@
+.product-section-container{
+  background: #ffff;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px 0px;
+}
+
+.inp-label{
+  font-weight: 600;
+  font-size: 15px;
+  margin: 10px;
+  text-transform: capitalize;
+}
