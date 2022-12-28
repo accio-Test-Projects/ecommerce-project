@@ -8,6 +8,46 @@ import AdjustIcon from '@mui/icons-material/Adjust';
 import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt';
 
 
+export const locationDropDownOptions=[
+	{
+		label: '110023',
+		value: '110023',
+	},
+	{
+		label: '110024',
+		value: '110024',
+	},
+	{
+		label: '110025',
+		value: '110025',
+	},
+	{
+		label: '110026',
+		value: '110026',
+	},
+	{
+		label: '110027',
+		value: '110027',
+	}
+]
+export const ProductCategories = [
+	{
+		label: 'Books',
+		value: 'books',
+	},
+	{
+		label: 'Men Clothing',
+		value: 'men_clothing',
+	},
+	{
+		label: 'Women Clothing',
+		value: 'women_clothing',
+	},
+	{
+		label: 'Electronics',
+		value: 'electronics',
+	},
+]
 export const adminPannelOptions = [
 	{
 		label: 'Dashboard',

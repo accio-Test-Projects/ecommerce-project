@@ -1,0 +1,57 @@
+.container{
+  border: 1px solid #0000000f;
+  padding: 10px !important;
+  border-radius: 10px !important;
+  margin: 15px auto !important;
+}
+
+.cat-dropodown{
+  display: flex;
+    gap: 10px;
+    border: 1px solid #00000030;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    flex-wrap:wrap
+}
+.cat-dropodown div{
+  border: 1px solid #00000017;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 2px;
+  background: #14ff141c;
+
+}
+.cat-dropodown div span{
+  cursor: pointer;
+  color: red;
+    font-size: 17px;
+    margin-top: -13px;
+    position: absolute;
+}
+
+.banner-container{
+  padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 20px auto !important;
+    width: 100% !important;
+
+}
+.featuredProduct{
+  display: flex;
+    width: 231px;
+    border: 1px solid #00000033;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+
+.featuredProduct span{
+  position: absolute;
+    margin-top: -18px;
+    margin-left: -18px;
+}
