@@ -1,16 +1,18 @@
-import { collection, getDocs, query, where } from 'firebase/firestore';
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { collection, getDocs, query, where } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { db } from "../../../FirebaseConfig";
 
-function PDP() {
-  const params=useParams();
-  const {id}=params
+function CategoryPage() {
+  const params = useParams();
   const [loading, setLoading] = useState(true);
-  const fetchData = async (productId) => {
+  const { category } = params;
+  console.log(params);
+
+  const fetchData = async (category) => {
     const q = await query(
       collection(db, "products"),
-      where("product_id", "==", productId)
+      where("productCategory", "==", category)
     );
 
     const querySnapshot = await getDocs(q);
@@ -23,14 +25,9 @@ function PDP() {
   useEffect(() => {
     //call firestore in product collect get all products were productCategory==category
 
-    fetchData(id);
+    fetchData(category);
   }, [params]);
-  console.log(id)
-  return (
-    loading?(
-      <div>loading</div>
-    ): (<div>PDP {id}</div>
-  ))
+  return loading ? <div>loading</div> : <div>CategoryPage {category}</div>;
 }
 
-export default PDP
+export default CategoryPage;

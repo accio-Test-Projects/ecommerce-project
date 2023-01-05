@@ -15,6 +15,7 @@ import AdminAuth from "../components/Authentication/AdminAuth";
 import CustomerAuth from "../components/Authentication/CustomerAuth";
 
 import Cart from "../components/Customer/Cart";
+import CategoryPage from "../components/Customer/CategoryPage"
 import Checkout from "../components/Customer/Checkout";
 import OrderSucess from "../components/Customer/OrderSucess";
 import UserProfile from "../components/Customer/UserProfile";
@@ -99,7 +100,7 @@ function Navs() {
           <Route element={<Checkout />} path="/checkout" />
           <Route element={<OrderSucess />} path="/ordersuccess" />
         </Route>
-
+        <Route element={<CategoryPage />} path="/products/:category" />
         <Route element={<PSP />} path="/products/search/:string" />
         <Route element={<PDP />} path="/product/:id" />
       </Routes>

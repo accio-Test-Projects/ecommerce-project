@@ -41,12 +41,28 @@
 }
 .featuredProduct{
   display: flex;
+  flex-direction: column;
     width: 231px;
     border: 1px solid #00000033;
     justify-content: space-between;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
+
+}
+.featuredProduct div{
+  font-size: 15px;
+    font-weight: 800;
+}
+
+.product-from-search{
+  padding: 10px;
+  border: 1px solid #0080002e;
+  border-radius: 20px;
+  margin: 20px;
+  font-size: 15px;
+  text-transform: capitalize;
+  cursor: pointer;
 
 }
 

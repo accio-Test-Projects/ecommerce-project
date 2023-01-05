@@ -2,6 +2,7 @@
 import {
   Button,
   Grid,
+  InputAdornment,
   MenuItem,
   Select,
   Switch,
@@ -18,11 +19,15 @@ import {
   ProductCategories,
   locationDropDownOptions,
 } from "../../../../constants";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import { addDoc, collection } from "firebase/firestore";
 import "../Products.css";
 // import { db } from "../../../../FirebaseConfig";
-import { AddProduct,getAllProducts,deleteProduct } from "../../../../store/Dispatchs";
+import {
+  AddProduct,
+  getAllProducts,
+  deleteProduct,
+} from "../../../../store/Dispatchs";
 
 const initialValues = {
   productName: "",
@@ -44,11 +49,10 @@ function CareerSection({ saveData }) {
 
   useEffect(() => {
     //call a function to get all products
-   getAllProducts().then((data)=>{
+    getAllProducts().then((data) => {
       setAllProducts(data);
-   });
+    });
   }, []);
-
 
   const formik = useFormik({
     initialValues: {
@@ -70,7 +74,7 @@ function CareerSection({ saveData }) {
     setEditBtn(!editBtn);
   };
   const handleDelete = (data) => {
-   deleteProduct(data)
+    deleteProduct(data);
   };
   const handleAddnew = () => {
     formik.setFieldValue({ ...initialValues });
@@ -204,7 +208,7 @@ function CareerSection({ saveData }) {
               value={formik.values.productImage}
               required={false}
               formik={formik}
-              key={"productImage"}
+              dataKey={"productImage"}
             />
           </Grid>
           <Grid item xs={6}>
@@ -220,6 +224,21 @@ function CareerSection({ saveData }) {
                 },
               }}
               fullWidth
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    {
+                      <Button
+                        onClick={() => {
+                          formik.setFieldValue("productSKU",uuidv4());
+                        }}
+                      >
+                        SKU
+                      </Button>
+                    }
+                  </InputAdornment>
+                ),
+              }}
               id="productSKU"
               name="productSKU"
               required
